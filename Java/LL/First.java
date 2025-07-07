@@ -85,7 +85,7 @@ class LL{
         System.out.println();
     }
 
-    public static class Node{
+    class Node{
         int data;
         Node next;
 
@@ -97,6 +97,17 @@ class LL{
             this.next = next;
         }
     }
+
+    Node insertingUsingRecursion(int index, int data, Node currentNode){
+        if(index == 0){
+            Node newNode = new Node(data, currentNode);
+            size++;
+            return newNode;
+        }
+        currentNode.next = insertingUsingRecursion(index - 1, data, currentNode.next);
+        return currentNode;
+    }
+
 }
 
 public class First {
@@ -120,8 +131,16 @@ public class First {
         list.deleteAtPosition(3);
         list.display();
         System.out.println(list.size);
-          list.deleteAtFirst();
+        list.deleteAtFirst();
+        list.display();
+        list.head = list.insertingUsingRecursion(2, 28, list.head);
+        list.display(); 
+        list.head = list.insertingUsingRecursion(4, 100, list.head);
+        list.display(); 
 
+        String s = "Hello";
+        s.length();
+        
 
 
     }
