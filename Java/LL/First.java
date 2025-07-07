@@ -35,6 +35,10 @@ class LL{
     }
 
     public void deleteAtPosition(int pos){
+        if (pos < 1 || pos > size) {
+            System.out.println("Invalid position: " + pos);
+            return;
+        }
         if (pos == 1) {
             deleteAtFirst();
             return;
