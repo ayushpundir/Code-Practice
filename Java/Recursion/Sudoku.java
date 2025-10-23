@@ -11,6 +11,9 @@ public class Sudoku {
                 {0, 0, 0, 0, 0, 0, 0, 7, 4},
                 {0, 0, 5, 2, 0, 6, 3, 0, 0}
         };
+        
+
+        
         sudokuSolver(board);
         for(int i = 0;i<board.length;i++){
             for(int j= 0;j<board.length;j++){
